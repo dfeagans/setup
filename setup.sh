@@ -10,7 +10,8 @@
 # Install curl (check if necessary on clean AWS image)
     # sudo apt-get install -y curl
     
-# Install nvm
+# Install nvm and node
+    # curl https://raw.github.com/creationix/nvm/master/install.sh | sh
     # source $HOME/.nvm/nvm.sh
     # nvm install stable
     # nvm use stable
