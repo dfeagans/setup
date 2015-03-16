@@ -12,7 +12,7 @@
     # sudo apt-get install -y wget
     
 # Install nvm and node
-    curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+    curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh
     source $HOME/.nvm/nvm.sh
     nvm install stable
     nvm use stable
