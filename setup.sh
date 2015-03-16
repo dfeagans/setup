@@ -29,9 +29,9 @@
     sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
 # Rename the existing .emacs.d and dotfiles directories if they exist, because git clone can't overwrite
-    # if [ -d ./dotfiles/ ]; then
-    #   mv dotfiles dotfiles.old
-    # fi
+    if [ -d ./dotfiles/ ]; then
+        mv dotfiles dotfiles.old
+    fi
     # if [ -d ./.emacs.d/ ]; then
     #   mv .emacs.d .emacs.d~
     # fi
