@@ -5,7 +5,7 @@
     cd $HOME
 
 # Install git
-    echo -e "\n***** INSTALLING GIT *****\n"
+    echo -e '\E[37;44m'"\033[1m\n***** INSTALLING GIT*****\n\033[0m"
     sudo apt-get install -y git
     
 # Install curl and wget (Both are installed by default on Ubuntu, but just in case un-comment)
@@ -13,7 +13,7 @@
     # sudo apt-get install -y wget
     
 # Install nvm and node
-    echo -e "\n***** INSTALLING NVM/NODE/NPM *****\n"
+    echo -e '\E[37;44m'"\033[1m\n***** INSTLALING NVM/NODE/NPM *****\n\033[0m"
     curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh
     source $HOME/.nvm/nvm.sh
     nvm install stable
@@ -26,7 +26,7 @@
     sudo apt-get install -y rlwrap
 
 # Install emacs24
-    echo -e "\n***** INSTALLING EMACS *****\n"
+    echo -e '\E[37;44m'"\033[1m\n***** INSTALLING EMACS *****\n\033[0m"
     sudo add-apt-repository -y ppa:cassou/emacs
     sudo apt-get -qq update
     sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
@@ -57,7 +57,7 @@
         # -C `git config user.email` = makes the comment whatever email git is configured for (adjust above)
         # -f ~/.ssh/id_rsa = resulting file is id_rsa
     echo -e '\E[37;44m'"\033[1m\n***** CREATING SSH-KEY FOR GITHUB CONNETION *****\n\033[0m"
-    keygen -t rsa -N "" -C `git config user.email` -f ~/.ssh/id_rsa 
+    ssh-keygen -t rsa -N "" -C `git config user.email` -f ~/.ssh/id_rsa 
     echo -e '\E[37;44m'"\033[1m\n***** REMANING GITHUB CONNECTION STEPS *****\n\033[0m"; \
     echo -e '\E[37;44m'"\033[1m\nLog in to github and under Settings > SSH Keys paste the entire key below:\n\033[0m"
     cat .ssh/id_rsa.pub
