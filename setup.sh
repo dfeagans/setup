@@ -5,6 +5,7 @@
     cd $HOME
 
 # Install git
+    echo -e "\n***** INSTALLING GIT *****\n"
     sudo apt-get install -y git
     
 # Install curl and wget (Both are installed by default on Ubuntu, but just in case un-comment)
@@ -12,6 +13,7 @@
     # sudo apt-get install -y wget
     
 # Install nvm and node
+    echo -e "\n***** INSTALLING NVM/NODE/NPM *****\n"
     curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh
     source $HOME/.nvm/nvm.sh
     nvm install stable
@@ -24,6 +26,7 @@
     sudo apt-get install -y rlwrap
 
 # Install emacs24
+    echo -e "\n***** INSTALLING EMACS *****\n"
     sudo add-apt-repository -y ppa:cassou/emacs
     sudo apt-get -qq update
     sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
@@ -38,6 +41,7 @@
     
 # Grab and symlink dotfiles into the correct locations
 # -b (backup) option is used because again, ln won't work if the file exists. -b adds ~ to the existing file
+    echo -e '\E[37;44m'"\033[1m\n***** CLONING AND SETTING UP DOTFILES *****\n\033[0m"
     git clone https://github.com/dfeagans/dotfiles.git
     ln -sb dotfiles/.screenrc .
     ln -sb dotfiles/.bash_profile .
@@ -45,3 +49,16 @@
     ln -sb dotfiles/.gitconfig .
     ln -sb dotfiles/.gitignore_global . 
     # ln -sf dotfiles/.emacs.d .  #DON'T USE. DEVELOPING BETTER METHOD FOR MANAGING EMACS CONFIGURATION.
+
+# Now that git is installed, proceed with as many steps as possible to connect Github account
+    #Options used below:
+        # -t rsa = type rsa
+        # -N "" = use empty passhphrases
+        # -C `git config user.email` = makes the comment whatever email git is configured for (adjust above)
+        # -f ~/.ssh/id_rsa = resulting file is id_rsa
+    echo -e '\E[37;44m'"\033[1m\n***** CREATING SSH-KEY FOR GITHUB CONNETION *****\n\033[0m"
+    keygen -t rsa -N "" -C `git config user.email` -f ~/.ssh/id_rsa 
+    echo -e '\E[37;44m'"\033[1m\n***** REMANING GITHUB CONNECTION STEPS *****\n\033[0m"; \
+    echo -e '\E[37;44m'"\033[1m\nLog in to github and under Settings > SSH Keys paste the entire key below:\n\033[0m"
+    cat .ssh/id_rsa.pub
+    echo -e "\n***** TO TEST CONNETION TO GITHUB USE: ssh -T git@github.com *****\n"
