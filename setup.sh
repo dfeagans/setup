@@ -62,3 +62,5 @@
     echo -e '\E[37;44m'"\033[1m\n********** Log in to github and under Settings > SSH Keys paste the entire key below: **********\n\033[0m"
     cat .ssh/id_rsa.pub
     echo -e '\E[37;44m'"\033[1m\n********** TO TEST CONNECTION TO GITHUB USE: ssh -T git@github.com **********\n\033[0m"
+
+    source .bash_profile
