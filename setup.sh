@@ -5,9 +5,7 @@
     cd $HOME
 
 # Install git
-    echo
-    echo "********** INSTALLING GIT**********"
-    echo
+    echo -e '\E[37;44m'"\033[1m\n********** INSTALLING GIT **********\n\033[0m"
     sudo apt-get install -y git
     
 # Install curl and wget (Both are installed by default on Ubuntu, but just in case un-comment)
@@ -15,9 +13,7 @@
     # sudo apt-get install -y wget
     
 # Install nvm and node
-    echo
-    echo "********** INSTALLING NVM/NODE/NPM **********"
-    echo
+    echo -e '\E[37;44m'"\033[1m\n********** INSTALLING NVM/NODE/NPM **********\n\033[0m"
     curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh
     source $HOME/.nvm/nvm.sh
     nvm install stable
@@ -30,9 +26,7 @@
     sudo apt-get install -y rlwrap
 
 # Install emacs24
-    echo
-    echo "********** INSTALLING EMACS **********"
-    echo
+    echo -e '\E[37;44m'"\033[1m\n********** INSTALLING EMACS **********\n\033[0m"
     sudo add-apt-repository -y ppa:cassou/emacs
     sudo apt-get -qq update
     sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
@@ -47,9 +41,7 @@
     
 # Grab and symlink dotfiles into the correct locations
 # -b (backup) option is used because again, ln won't work if the file exists. -b adds ~ to the existing file
-    echo
-    echo "********** CLONING AND SETTING UP DOTFILES **********"
-    echo
+    echo -e '\E[37;44m'"\033[1m\n********** CLONING AND SETTING UP DOTFILES **********\n\033[0m"
     git clone https://github.com/dfeagans/dotfiles.git
     ln -sb dotfiles/.screenrc .
     ln -sb dotfiles/.bash_profile .
@@ -64,16 +56,9 @@
         # -N "" = use empty passhphrases
         # -C `git config user.email` = makes the comment whatever email git is configured for (adjust above)
         # -f ~/.ssh/id_rsa = resulting file is id_rsa
-    echo
-    echo "********** CREATING SSH-KEY FOR GITHUB CONNECTION **********"
-    echo
+    echo -e '\E[37;44m'"\033[1m\n********** CREATING SSH-KEY FOR GITHUB CONNECTION **********\n\033[0m"
     ssh-keygen -t rsa -N "" -C `git config user.email` -f ~/.ssh/id_rsa 
-    echo
-    echo "********** REMANING GITHUB CONNECTION STEPS **********"
-    echo
-    echo "********** Log in to github and under Settings > SSH Keys paste the entire key below: **********"
-    echo
+    echo -e '\E[37;44m'"\033[1m\n********** REMANING GITHUB CONNECTION STEPS **********\n\033[0m"
+    echo -e '\E[37;44m'"\033[1m\n********** Log in to github and under Settings > SSH Keys paste the entire key below: **********\n\033[0m"
     cat .ssh/id_rsa.pub
-    echo
-    echo "********** TO TEST CONNECTION TO GITHUB USE: ssh -T git@github.com **********"
-    echo
+    echo -e '\E[37;44m'"\033[1m\n********** TO TEST CONNECTION TO GITHUB USE: ssh -T git@github.com **********\n\033[0m"
