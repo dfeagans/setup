@@ -12,12 +12,12 @@
     # sudo apt-get install -y curl
     # sudo apt-get install -y wget
     
-# Install nvm and node
+# Install nvm, node, and npm.
     echo -e '\E[37;44m'"\033[1m\n********** INSTALLING NVM/NODE/NPM **********\n\033[0m"
     curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh
     source $HOME/.nvm/nvm.sh
     nvm install stable
-    nvm use stable
+    nvm alias default stable
     
 # Install jshint (might be unecessary depending on final emacs/javascript IDE I work out)
     npm install -g jshint
