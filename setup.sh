@@ -50,8 +50,6 @@
     ln -sb dotfiles/.gitignore_global . 
     ln -sb dotfiles/init.el ~/.emacs.d/.
     ln -sb dotfiles/my-packages ~/.emacs.d/.
-    # ln -sf dotfiles/customSnippets ~/.emacs.d/.   #This would be used if I started created my own custom snippets.
-    # See matching line in the emacs init.el file that would be uncommented as well.
 
 # Now that git is installed, proceed with as many steps as possible to connect Github account
     #Options used below:
