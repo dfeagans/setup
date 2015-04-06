@@ -48,8 +48,8 @@
     ln -sb dotfiles/.bashrc .
     ln -sb dotfiles/.gitconfig .
     ln -sb dotfiles/.gitignore_global . 
-    ln -sb dotfiles/init.el ~/.emacs.d/.
-    ln -sb dotfiles/my-packages ~/.emacs.d/.
+    ln -sb ~/dotfiles/init.el ~/.emacs.d/.
+    ln -sb ~/dotfiles/my-packages.el ~/.emacs.d/.
 
 # Now that git is installed, proceed with as many steps as possible to connect Github account
     #Options used below:
