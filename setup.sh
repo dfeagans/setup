@@ -42,7 +42,7 @@
 # Grab and symlink dotfiles into the correct locations
 # -b (backup) option is used because again, ln won't work if the file exists. -b adds ~ to the existing file
     echo -e '\E[37;44m'"\033[1m\n********** CLONING AND SETTING UP DOTFILES **********\n\033[0m"
-    git clone https://github.com/dfeagans/dotfiles.git
+    git clone https://github.com/dfeagans/dotfiles
     ln -sb dotfiles/.screenrc .
     ln -sb dotfiles/.bash_profile .
     ln -sb dotfiles/.bashrc .
