@@ -63,3 +63,10 @@
     echo -e '\E[37;44m'"\033[1m\n********** Log in to github and under Settings > SSH Keys paste the entire key below: **********\n\033[0m"
     cat .ssh/id_rsa.pub
     echo -e '\E[37;44m'"\033[1m\n********** TO TEST CONNECTION TO GITHUB USE: ssh -T git@github.com **********\n\033[0m"
+
+# Since I didn't have ssh key access to github with the fresh install, git clone HTTPSurl had to be used. That makes the remote origin
+# for that git repo the HTTPSurl, which would require github username and password every time I push to it. The previous lines set-up
+# git-hub to use an SSH-key, so the below changes the remote origin for the cloned dotfiles repo to be the SSHurl (and thus utilize the key)
+    cd dotfiles/
+    git remote set-url origin git@github.com:dfeagans/dotfiles.git
+    cd
