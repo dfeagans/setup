@@ -70,3 +70,6 @@
     cd dotfiles/
     git remote set-url origin git@github.com:dfeagans/dotfiles.git
     cd
+
+# Deletes the script since it won't be needed anymore (and it's not linked to git, so no reason to keep it around to try to modify)
+    rm setup.sh 
