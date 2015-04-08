@@ -58,7 +58,7 @@
         # -C `git config user.email` = makes the comment whatever email git is configured for (adjust above)
         # -f ~/.ssh/id_rsa = resulting file is id_rsa
     echo -e '\E[37;44m'"\033[1m\n********** CREATING SSH-KEY FOR GITHUB CONNECTION **********\n\033[0m"
-    ssh-keygen -t rsa -N "" -C `git config user.email` -f ~/.ssh/id_rsa 
+    ssh-keygen -t rsa -N "" -C `git config user.email` -f ~/.ssh/id_rsa
     echo -e '\E[37;44m'"\033[1m\n********** REMAINING GITHUB CONNECTION STEPS **********\n\033[0m"
     echo -e '\E[37;44m'"\033[1m\n********** Log in to github and under Settings > SSH Keys paste the entire key below: **********\n\033[0m"
     cat .ssh/id_rsa.pub
