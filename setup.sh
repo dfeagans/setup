@@ -26,8 +26,12 @@
     sudo apt-get install -y rlwrap
 
 # Install emacs24
+    # Emacs Packages Installed Using the Daily Build PPA
+        # emacs24-nox = Emacs witout X-Windows System AKA emacs only in the terminal.
+        # emacs24-el  = Contains the elisp source for convenience of users. Saving Space?
+        # emacs24-common-non-dfsg = The manual. Common non-debian free software guideline compliant files.
     echo -e '\E[37;44m'"\033[1m\n********** INSTALLING EMACS **********\n\033[0m"
-    sudo add-apt-repository -y ppa:cassou/emacs
+    sudo apt-add-repository -y ppa:ubuntu-elisp/ppa
     sudo apt-get -qq update
     sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
@@ -35,9 +39,9 @@
     if [ -d ./dotfiles/ ]; then
         mv dotfiles dotfiles.old
     fi
-    # if [ -d ./.emacs.d/ ]; then
-    #   mv .emacs.d .emacs.d~
-    # fi
+    if [ -d ./.emacs.d/ ]; then
+        mv .emacs.d .emacs.d~
+    fi
     
 # Grab and symlink dotfiles into the correct locations
 # -b (backup) option is used because again, ln won't work if the file exists. -b adds ~ to the existing file
@@ -48,6 +52,7 @@
     ln -sb dotfiles/.bashrc .
     ln -sb dotfiles/.gitconfig .
     ln -sb dotfiles/.gitignore_global .
+    mkdir .emacs.d
     ln -sb ../dotfiles/init.el .emacs.d/.
     ln -sb ../dotfiles/my-packages.el .emacs.d/.
 
