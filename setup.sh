@@ -47,7 +47,7 @@
     ln -sb dotfiles/.bash_profile .
     ln -sb dotfiles/.bashrc .
     ln -sb dotfiles/.gitconfig .
-    ln -sb dotfiles/.gitignore_global . 
+    ln -sb dotfiles/.gitignore_global .
     ln -sb ../dotfiles/init.el .emacs.d/.
     ln -sb ../dotfiles/my-packages.el .emacs.d/.
 
