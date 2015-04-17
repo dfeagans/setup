@@ -36,6 +36,7 @@
     sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
 # Rename the existing .emacs.d and dotfiles directories if they exist, because git clone can't overwrite
+# the existing dotfiles directory and symlinking the .emacs.d won't work later if it already exists.
     if [ -d ./dotfiles/ ]; then
         mv dotfiles dotfiles.old
     fi
@@ -52,9 +53,7 @@
     ln -sb dotfiles/.bashrc .
     ln -sb dotfiles/.gitconfig .
     ln -sb dotfiles/.gitignore_global .
-    mkdir .emacs.d
-    ln -sb ../dotfiles/init.el .emacs.d/.
-    ln -sb ../dotfiles/my-packages.el .emacs.d/.
+    ln -s dotfiles/.emacs.d .
 
 # Now that git is installed, proceed with as many steps as possible to connect Github account
     #Options used below:
