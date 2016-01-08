@@ -5,7 +5,7 @@ _____________________________________________________________________________
 **Initial SSH Connection**:
 - After creating a new Ubuntu instance on the AWS dashboard, make sure to download (or reuse an existing) public key during the AWS instance launch.
 - Make the key NOT publicly visible to others using `chmod 400 KEYNAME.pem`. **REMEMBER: Public keys can't be visible to work.**
-- Now you should be able to use `ssh -i KEYNAME.pem username@PUBLICIPorPUBLICDNS` to connect. The `-i` (identity file) option just means here's the full path to the key. If in doubt, right click the instance and click Connect. AWS will provide the verbatim commands.
+- Now you should be able to use `ssh -i KEYNAME.pem username@PUBLICIPorPUBLICDNS` to connect. The `-i` (identity file) option just means here's the full path to the key. If in doubt, on the AWS dashboard the instance was just launched from, right click the instance and click Connect. AWS will provide the verbatim commands.
 
 **More Robust SSH Connection**:
 - The easiest method to ssh in regularly uses the SSH config method. This allows you to simply type `ssh aws` to connect. Creating one is easy:
