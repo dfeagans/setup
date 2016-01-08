@@ -29,6 +29,7 @@ Host aws
 - The final step is to add an authorized key so that the user's public key will be identified and approved. This is done using `touch .ssh/authorized_keys` to create the blank file and then running `chmod 600 .ssh/authorized_keys` to make it so that only the owner can read and write to the file. Finally paste the public key from the key pair into the authorized_keys file.
 - To delete the user and their home directory, just use `sudo userdel olduser`. Adding the *-r* option will also remove their directory.
 - For more info on the key pair process reference [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair).
+
 _____________________________________________________________________________
 **Dotfiles Configuration and Github Connection:**
 
