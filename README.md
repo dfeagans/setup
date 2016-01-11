@@ -29,7 +29,7 @@ Host aws
 - The final step is to add an authorized key so that the user's public key will be identified and approved. This is done using `touch .ssh/authorized_keys` to create the blank file and then running `chmod 600 .ssh/authorized_keys` to make it so that only the owner can read and write to the file. Finally paste the public key from the key pair into the authorized_keys file.
 - To delete the user and their home directory, just use `sudo userdel olduser`. Adding the *-r* option will also remove their directory.
 - For more info on the key pair process reference [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair).
-- Note that running anything on controlled ports requires root access, which the new user won't have. The new user can be added to the sudo group using `sudo usermod -a -G sudo newUser`. That's scorching the Earth, so it might be better to look into the visudo and sudoers.d file to give more limited access.
+- Note that running anything on controlled ports requires root access, which the new user won't have. The new user can be added to the sudo group using `sudo usermod -a -G sudo newUser`. That's scorching the Earth, so it might be better to look into the visudo and sudoers.d file to give more limited access. On the AWS stuff (since the user was set-up with the --disabled-password option), it's necessary to set-up password-less sudo by adding `userName ALL=(ALL) NOPASSWD:ALL`to the appropriate file within /etc/sudoes.d (90-cloud-init-users for Ubuntu 14.04).
 
 _____________________________________________________________________________
 **Dotfiles Configuration and Github Connection:**
